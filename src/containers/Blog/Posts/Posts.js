@@ -10,6 +10,7 @@ class Posts extends Component {
     }
 
     componentDidMount () {
+        console.log(this.props);
         axios.get( '/posts' )
             .then( response => {
                 const posts = response.data.slice(0, 4);
@@ -31,7 +32,7 @@ class Posts extends Component {
     postSelectedHandler = (id) => {
         this.setState({selectedPostId: id});
     }
-
+    
     render () {
         let posts = <p style={{textAlign: 'center'}}>Something went wrong!</p>;
         if (!this.state.error) {
@@ -48,7 +49,6 @@ class Posts extends Component {
             <section className="Posts">
                 {posts}
             </section>
-
         );
     }
 }
