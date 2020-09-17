@@ -33,7 +33,8 @@ class Blog extends Component {
                 <Route path="/" render={() => <h1>Home 2</h1>} /> */}
                 <Switch>
                     <Route path="/new-post" component={NewPost} />
-                    <Route path="/posts/" component={Posts} />
+                    <Route path="/posts" component={Posts} />
+                    <Route path="/" component={Posts} />
                 </Switch>
             </div>
         );
